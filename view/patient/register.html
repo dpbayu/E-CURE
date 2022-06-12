@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>E-CURE</title>
+</head>
+
+<body>
+    <div class="w-full h-full">
+        <div class="m-10">
+            <div class="flex w-full h-full">
+                <!-- Start Logo -->
+                <img class="w-28 h-28 rounded-sm" src="https://source.unsplash.com/360x200?logo" alt="logo">
+                <!-- End Logo -->
+                <div class="w-full h-full text-center my-10">
+                    <h1 class="text-5xl font-bold mb-5">Form Register</h1>
+                    <h2 class="text-3xl">ISILAH DATA DIBAWAH INI DENGAN BAIK DAN BENAR</h2>
+                </div>
+            </div>
+            <!-- Start Form -->
+            <div class="mx-20">
+                <div class="">
+                    <div class="flex">
+                        <div class="mb-5 w-1/2 flex items-center">
+                            <label class="text-gray-400 font-bold w-36">Username</label>
+                            <input type="text" class="rounded-sm mt-2 h-10 w-96" placeholder="Username">
+                        </div>
+                        <div class="mb-5 w-1/2 flex items-center">
+                            <label class="text-gray-400 font-bold w-36">Nama
+                                Kota</label>
+                            <input type="text" class="rounded-sm mt-2 h-10 w-96" placeholder="Kota Anda">
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="mb-5 w-1/2 flex items-center">
+                            <label class="text-gray-400 font-bold w-36">Nama Lengkap</label>
+                            <input type="text" class="rounded-sm mt-2 h-10 w-96" placeholder="Nama Lengkap Anda">
+                        </div>
+                        <div class="mb-5 w-1/2 flex items-center">
+                            <label class="text-gray-400 font-bold w-36">Golongan Darah</label>
+                            <div x-data="custom_select" class="relative flex-col">
+                                <button @click="show = !show" class="px-4 rounded-sm border border-black h-10 bg-white">
+                                    <p x-text="value == null ? 'Select' : value" class="w-48">Select</p>
+                                </button>
+                                <div x-show="show" @click.outside="show = false"
+                                    x-transition.opacity.scale.origin.top.duration.300ms
+                                    class="absolute top-10 left-0 bg-white rounded shadow-md py-1 px-5 space-y-2">
+                                    <template x-for="product in products" :key="product">
+                                        <button @click="value = product;show = false" class="w-48 flex">
+                                            <p x-text="product" class="hover:text-blue-400"></p>
+                                        </button>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-5 w-1/2 flex items-center">
+                        <label class="text-gray-400 font-bold w-36">Password</label>
+                        <input type="text" class="rounded-sm mt-2 h-10 w-96" placeholder="Password Anda">
+                    </div>
+                    <div class="mb-5 w-1/2 flex items-center">
+                        <label class="text-gray-400 font-bold w-36">No KTP</label>
+                        <input type="text" class="rounded-sm mt-2 h-10 w-96" placeholder="No KTP Anda">
+                    </div>
+                    <div class="mb-5 w-1/2 flex items-center">
+                        <label class="text-gray-400 font-bold w-36">Tempat, Tgl Lahir</label>
+                        <input type="text" class="rounded-sm mt-2 h-10 w-96" placeholder="Tempat, Tgl Lahir Anda">
+                    </div>
+                </div>
+            </div>
+            <!-- End Form -->
+        </div>
+    </div>
+    <!-- Script Start -->
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+    <script src="./js/script.js"></script>
+    <!-- Script End -->
+</body>
+
+</html>
