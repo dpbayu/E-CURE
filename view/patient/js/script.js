@@ -5,3 +5,11 @@ document.addEventListener('alpine:init', () => {
         value: null
     }));
 })
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('custom_jnskelamin', () => ({
+        products: ['LAKI-LAKI', 'PEREMPUAN'],
+        show: false,
+        value: null
+    }));
+})
