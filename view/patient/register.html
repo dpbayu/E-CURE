@@ -72,6 +72,27 @@
                         <label class="text-gray-400 font-bold w-36">Tempat, Tgl Lahir</label>
                         <input type="text" class="rounded-sm mt-2 h-10 w-96" placeholder="Tempat, Tgl Lahir Anda">
                     </div>
+                    <div class="mb-5 w-1/2 flex items-center">
+                        <label class="text-gray-400 font-bold w-36">Jenis Kelamin</label>
+                        <div x-data="custom_jnskelamin" class="relative flex-col">
+                            <button @click="show = !show" class="px-24 rounded-sm border border-black h-10 bg-white">
+                                <p x-text="value == null ? 'Select' : value" class="w-48">Select</p>
+                            </button>
+                            <div x-show="show" @click.outside="show = false"
+                                x-transition.opacity.scale.origin.top.duration.300ms
+                                class="absolute top-10 left-0 bg-white rounded shadow-md py-1 px-24 space-y-2">
+                                <template x-for="product in products" :key="product">
+                                    <button @click="value = product;show = false" class="w-48 flex">
+                                        <p x-text="product" class="hover:text-blue-400"></p>
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-5 w-1/2 flex items-center">
+                        <label class="text-gray-400 font-bold w-36">Tempat, Tgl Lahir</label>
+                        <input type="text" class="rounded-sm mt-2 h-10 w-96" placeholder="Tempat, Tgl Lahir Anda">
+                    </div>
                 </div>
             </div>
             <!-- End Form -->
